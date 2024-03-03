@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 
 export const useSlider = () => {
     const sliderRef = useRef<HTMLDivElement>(null)

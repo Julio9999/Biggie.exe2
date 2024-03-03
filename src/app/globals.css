@@ -25,3 +25,18 @@ body {
     )
     rgb(var(--background-start-rgb)); */
 }
+
+
+.slider-button {
+  background-color: #80808080;
+}
+
+.slider .slider-button {
+  transition: all ease .2s;
+}
+
+.slider:hover .slider-button {
+  transform: translateX(0%);
+}
+
+

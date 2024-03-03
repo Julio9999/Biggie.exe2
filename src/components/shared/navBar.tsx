@@ -34,7 +34,7 @@ export const NavBar = () => {
           </Link>
         </div>
       </ul>
-      <ul className='flex basis-1/4 items-center gap-4'>
+      <ul className='flex basis-1/4 items-center gap-4 select-none'>
         <p>Buscar productos</p>
         <RiUserShared2Fill />
         <FaHeart />

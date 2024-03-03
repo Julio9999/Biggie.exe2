@@ -7,7 +7,7 @@ interface Props {
 
 export const Slide = ({src}: Props) => {
     return (
-        <div className="min-w-[100vw]">
+        <div className="min-w-full">
             <Image
                 src={src}
                 alt="delivery"
