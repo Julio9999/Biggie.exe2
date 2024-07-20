@@ -16,7 +16,7 @@ export default function Home() {
 ]
 
   return (
-    <main className="w-full mx-auto">
+    <main>
       <Slider srcs={srcs} />
     </main>
   )

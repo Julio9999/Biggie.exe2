@@ -5,6 +5,16 @@ import { useSlider } from "@/hooks/Slider/useSlider"
 import { StaticImageData } from "next/image";
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
 
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "@/components/ui/carousel"
+import { useState } from "react";
+import { cn } from "@/lib/utils";
+
 
 interface Props {
     srcs: StaticImageData[]
@@ -19,32 +29,33 @@ export const Slider = ({ srcs }: Props) => {
         sliderRef
     } = useSlider()
 
+    const [showButtons, setShowButtons] = useState(false);
+
 
     return (
-        <>
-            <div className="relative slider w-full">
-                <div className="absolute left-0 overflow-hidden top-0 bottom-0 w-full flex justify-between items-center">
-                    <MdOutlineKeyboardArrowLeft color="white" size={40}
-                    className="cursor-pointer mx-10  rounded-3xl slider-button translate-x-[-200%]"
-                    onClick={() => moveBackward()}
-                      />
-                    <MdOutlineKeyboardArrowRight color="white" size={40} 
-                    className="cursor-pointer mx-10 rounded-3xl slider-button translate-x-[200%]"
-                    onClick={() => moveForward() }
-                    />
-                </div>
-                <div className="flex flex-row w-full mx-auto select-none transition-all border-[red] border-4 overflow-x-auto scroll-smooth snap-mandatory slider" ref={sliderRef}>
-                    {
-                        srcs.map(item => (
-                            <Slide
-                                src={item.src}
-                                key={item.src}
-                            />
-                        ))
-                    }
-                </div>
-
-            </div>
-        </>
+        <Carousel
+            className="mx-auto max-w-full flex flex-col overflow-hidden"
+            opts={{
+                loop: true
+            }}
+            onMouseEnter={() => setShowButtons(() => true)}
+            onMouseLeave={() => setShowButtons(() => false)}
+        >
+            <CarouselContent className="border">
+                {
+                    srcs.map(src => (
+                        <CarouselItem className="select-none">
+                            <img src={src.src} />
+                        </CarouselItem>
+                    ))
+                }
+            </CarouselContent>
+            {
+                <>
+                    <CarouselPrevious position={cn(showButtons ? "1rem" : "-2rem")} className="ease-in duration-200 transition-all" />
+                    <CarouselNext position={cn(showButtons ? "1rem" : "-2rem")} className="ease-in duration-200 transition-all" />
+                </>
+            }
+        </Carousel>
     )
 }

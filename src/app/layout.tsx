@@ -17,12 +17,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-      <main>
-        <NavBar />
-        {children}
-      </main>
-        </body>
+      <body >
+        <main  className="max-w-[1785px] mx-auto">
+          <NavBar />
+          {children}
+        </main>
+      </body>
     </html>
   )
 }
