@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <main>
-      <Slider srcs={srcs} />
+      {/* <Slider srcs={srcs} /> */}
     </main>
   )
 }

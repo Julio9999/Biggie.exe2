@@ -204,7 +204,7 @@ CarouselItem.displayName = "CarouselItem"
 const CarouselPrevious = React.forwardRef<
   HTMLButtonElement,
   CarouselNavigationButtonsProps
->(({ className, variant = "outline", size = "icon", position, ...props }, ref) => {
+>(({ className, variant = "outline", size = "icon", position, children, ...props }, ref) => {
   const { orientation, scrollPrev, canScrollPrev } = useCarousel()
 
   return (
@@ -224,8 +224,12 @@ const CarouselPrevious = React.forwardRef<
       style={{ left: position }} // Estilo inline para la posición
       {...props}
     >
-      <ChevronLeftIcon className="h-4 w-4" />
-      {/* <span className="sr-only">Previous slide</span> */}
+      {
+        children
+          ? (children)
+          : (<ChevronLeftIcon className="h-4 w-4" />)
+
+      }
     </Button>
   )
 })
@@ -234,7 +238,7 @@ CarouselPrevious.displayName = "CarouselPrevious"
 const CarouselNext = React.forwardRef<
   HTMLButtonElement,
   CarouselNavigationButtonsProps
->(({ className, variant = "outline", size = "icon", position, ...props }, ref) => {
+>(({ className, variant = "outline", size = "icon", position, children, ...props }, ref) => {
   const { orientation, scrollNext, canScrollNext } = useCarousel()
 
   return (
@@ -251,11 +255,14 @@ const CarouselNext = React.forwardRef<
       )}
       disabled={!canScrollNext}
       onClick={scrollNext}
-      style={{right: position}}
+      style={{ right: position }}
       {...props}
     >
-      <ChevronRightIcon className="h-4 w-4" />
-      <span className="sr-only">Next slide</span>
+      {
+        children
+          ? (children)
+          : <ChevronRightIcon className="h-4 w-4" />
+      }
     </Button>
   )
 })
