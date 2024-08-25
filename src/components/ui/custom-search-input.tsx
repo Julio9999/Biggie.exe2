@@ -26,7 +26,7 @@ export const CustomSearchInput = ({ className }: Props) => {
                 />
                 <FloatingLabel
                     htmlFor="floating-customize"
-                    className={clsx("font-medium text-gray-400 p-0", {
+                    className={clsx("font-medium text-gray-400 p-0 text-sm", {
                         'text-mainColor rounded-lg px-0': focus
                     })}>
                     Buscar Productos

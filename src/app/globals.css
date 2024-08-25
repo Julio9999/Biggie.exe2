@@ -75,6 +75,10 @@
     @apply hover:bg-gray-100  box-content p-2 rounded-full;
   }
 
+  .dark-background{
+    @apply bg-blue-700;
+  }
+
   .newClass{
     background-color: #00000000;
   }

@@ -15,14 +15,13 @@ import {
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons";
+import { SliderProps } from "@/interfaces";
 
 
-interface Props {
-    srcs: StaticImageData[]
-}
 
 
-export const Slider = ({ srcs }: Props) => {
+
+export const Slider = ({ srcs }: SliderProps) => {
 
     const [showButtons, setShowButtons] = useState(false);
 
@@ -56,15 +55,13 @@ export const Slider = ({ srcs }: Props) => {
                 <>
                     <CarouselPrevious
                         position={cn(showButtons ? "1rem" : "-2rem")}
-                        className="ease-in duration-200 transition-all bg-gray-400 hover:bg-red-600 border-transparent"
-                        // children={<ChevronLeftIcon color="white" className="h-6 w-6" />}
+                        className="ease-in duration-200 transition-all bg-gray-400   hover:bg-red-600 border-transparent"
                     >
                         <ChevronLeftIcon color="white" className="h-6 w-6" />
                     </CarouselPrevious>
                     <CarouselNext
                         position={cn(showButtons ? "1rem" : "-2rem")}
                         className="ease-in duration-200 transition-all bg-gray-400 hover:bg-red-600 border-transparent"
-                        // children={<ChevronRightIcon color="white" className="h-6 w-6" />}
                     >
                         <ChevronRightIcon color="white" className="h-6 w-6" />
                     </CarouselNext>

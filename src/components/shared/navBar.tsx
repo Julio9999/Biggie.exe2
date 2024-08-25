@@ -37,11 +37,6 @@ export const NavBar = () => {
                 </Link>
               </li>
               <li className="flex items-center">
-                <Link href={'/facturas'} className="font-bold text-gray-600 text-sm" >
-                  Facturas
-                </Link>
-              </li>
-              <li className="flex items-center">
                 <Link href={"/facturas"} className="font-bold bg-mainColor rounded-xl text-white px-3 py-0.5 text-sm">
                   Facturas electrónicas
                 </Link>

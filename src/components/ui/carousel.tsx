@@ -35,6 +35,7 @@ const CarouselContext = React.createContext<CarouselContextProps | null>(null)
 // Interfaces Personalizadas
 interface CarouselNavigationButtonsProps extends React.ComponentProps<typeof Button> {
   position?: string;
+  canDisable?: boolean;
 }
 
 
@@ -204,7 +205,7 @@ CarouselItem.displayName = "CarouselItem"
 const CarouselPrevious = React.forwardRef<
   HTMLButtonElement,
   CarouselNavigationButtonsProps
->(({ className, variant = "outline", size = "icon", position, children, ...props }, ref) => {
+>(({ className, variant = "default", size = "icon", position = "1rem", children, canDisable = true, ...props }, ref) => {
   const { orientation, scrollPrev, canScrollPrev } = useCarousel()
 
   return (
@@ -219,7 +220,7 @@ const CarouselPrevious = React.forwardRef<
           : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
         className
       )}
-      disabled={!canScrollPrev}
+      disabled={!canScrollPrev && canDisable}
       onClick={scrollPrev}
       style={{ left: position }} // Estilo inline para la posición
       {...props}
@@ -238,7 +239,7 @@ CarouselPrevious.displayName = "CarouselPrevious"
 const CarouselNext = React.forwardRef<
   HTMLButtonElement,
   CarouselNavigationButtonsProps
->(({ className, variant = "outline", size = "icon", position, children, ...props }, ref) => {
+>(({ className, variant = "outline", size = "icon", position = "1rem", children, canDisable = true, ...props }, ref) => {
   const { orientation, scrollNext, canScrollNext } = useCarousel()
 
   return (
@@ -253,7 +254,7 @@ const CarouselNext = React.forwardRef<
           : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
         className
       )}
-      disabled={!canScrollNext}
+      disabled={!canScrollNext && canDisable}
       onClick={scrollNext}
       style={{ right: position }}
       {...props}
