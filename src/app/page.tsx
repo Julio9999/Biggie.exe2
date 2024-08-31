@@ -28,8 +28,8 @@ import varios from "@/assets/productos-varios.jpg";
 
 
 
-import { Slider } from '@/components';
-import { SecondarySlider } from "./ui/secondary-slider";
+import { ResponsiveSlider, Slider } from '@/components';
+import { SliderItem } from "@/interfaces";
 
 export default function Home() {
 
@@ -40,33 +40,33 @@ export default function Home() {
     chocolate,
   ]
 
-  const secondarySrcs = [
-    alimentos,
-    almacen,
-    asado,
-    bebes,
-    bebidasAlcoholicas,
-    bebidasSinAlcohol,
-    carniceria,
-    golosinas,
-    congelados,
-    fiambreria,
-    frutas_y_verduras,
-    heladeria,
-    higiene,
-    lacteos,
-    libreria,
-    limpieza,
-    mascotas,
-    panaderia,
-    snacks,
-    varios
+  const secondarySrcs:SliderItem[] = [
+    {image: alimentos, description: 'Alimentos Especiales'},
+    {image: almacen, description: 'Almacén'},
+    {image:asado, description: 'Asado'},
+    {image: bebes, description: 'Bebes'},
+    {image: bebidasAlcoholicas, description: 'Bebidas con Alcohol'},
+    {image: bebidasSinAlcohol, description: 'Bebidas sin Alcohol'},
+    {image: carniceria, description: 'Carneceria'},
+    {image: golosinas, description: 'Chocolates y Golosinas'},
+    {image: congelados, description: 'Congelados'},
+    {image: fiambreria, description: 'Fiambreria'},
+    {image: frutas_y_verduras, description: 'Frutería y Verduleria'},
+    {image: heladeria, description: 'Heladeria y Confiteria'},
+    {image: higiene, description: 'Higiene Personal'},
+    {image: lacteos, description: 'Lácteos'},
+    {image: libreria, description: 'Libreria'},
+    {image: limpieza, description: 'Limpieza'},
+    {image: mascotas, description: 'Mascotas'},
+    {image: panaderia, description: 'Panaderia'},
+    {image: snacks, description: 'Snacks'},
+    {image: varios, description: 'Varios'}
   ]
 
   return (
     <main>
       <Slider srcs={srcs} />
-      <SecondarySlider srcs={secondarySrcs} />
+      <ResponsiveSlider items={secondarySrcs} />
     </main>
   )
 }

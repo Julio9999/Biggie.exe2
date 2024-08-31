@@ -18,10 +18,12 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons";
 import { SliderProps } from "@/interfaces";
 
 
+interface Props {
+    srcs: StaticImageData[];
+}
 
 
-
-export const Slider = ({ srcs }: SliderProps) => {
+export const Slider = ({ srcs }: Props) => {
 
     const [showButtons, setShowButtons] = useState(false);
 

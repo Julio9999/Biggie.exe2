@@ -1,1 +1,1 @@
-export type{ SliderProps } from './common/slider/slider.interface';
+export type{ SliderProps, SliderItem } from './common/slider/slider.interface';
