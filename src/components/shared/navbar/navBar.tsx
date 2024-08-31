@@ -14,8 +14,8 @@ import { CustomToltip } from "@/components";
 export const NavBar = () => {
   return (
     <div className="w-full bg-white">
-      <div className="flex justify-between items-center px-4 py-1">
-        <div className="flex-1">
+      <div className="flex md:justify-between items-center px-4 py-1 gap-2">
+        <div className="md:flex-1">
           <div className="lg:hidden">
             <IoMdMenu size={25} />
           </div>
@@ -62,7 +62,7 @@ export const NavBar = () => {
             <CustomToltip text="Mis Pedidos">
               <IoBagHandleOutline size={25} className="hidden lg:block iconHover" cursor="pointer" color='gray' />
             </CustomToltip>
-            <IoCartOutline size={25} color='gray' className="hidden lg:block iconHover" cursor="pointer" />
+            <IoCartOutline size={25} color='gray' className="iconHover" cursor="pointer" />
           </div>
         </div>
       </div>
