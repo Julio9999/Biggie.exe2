@@ -24,7 +24,7 @@ export const ResponsiveSlider = ({ items }: SliderProps) => {
 
     return (
         <Carousel
-            className="px-2 pt-3 w-full flex md:flex-row flex-col"
+            className="pt-3 w-full flex md:flex-row flex-col"
             opts={{
                 loop: true,
                 dragFree: true,
@@ -74,13 +74,13 @@ export const ResponsiveSlider = ({ items }: SliderProps) => {
             }
 
             {
-                <div className="w-full h-6 border flex items-center justify-around px-10 md:hidden">
+                <div className="w-full h-6 mt-2 flex items-center justify-around px-10 md:hidden">
                      {
                     ranges?.map((range, index) => (
                         <span
                             key={index}
                             className={clsx(`
-                            w-1.5 h-1.5 rounded-full bg-gray-300`, {
+                            w-[5px] h-[5px] rounded-full bg-gray-300`, {
                                 'bg-gray-950': current >= range.start && current <= range.end
                             })}
                             onClick={() => api?.scrollTo(range.start - 1)}

@@ -83,3 +83,10 @@
     background-color: #00000000;
   }
 }
+
+.image-bg {
+  background-image: url('./../assets//card-image.webp');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}

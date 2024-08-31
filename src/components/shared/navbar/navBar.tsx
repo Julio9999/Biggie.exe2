@@ -3,13 +3,13 @@ import { IoBagHandleOutline, IoCartOutline } from "react-icons/io5"
 import { RiUserShared2Fill } from "react-icons/ri"
 import { IoMdMenu } from "react-icons/io";
 import { IoSearchSharp } from "react-icons/io5";
-import logo from "../../../public/assets/logo-biggie.svg"
+import logo from "@/assets/logo-biggie.svg"
 
 
 import Link from "next/link"
-import { FloatingInput, FloatingLabel } from "../ui/floating-label-input";
-import { CustomSearchInput } from "../ui/custom-search-input";
-import { CustomToltip } from "./custom-toltip";
+import { FloatingInput, FloatingLabel } from "../../ui/floating-label-input";
+import { CustomSearchInput } from "../../ui/custom-search-input";
+import { CustomToltip } from "@/components";
 
 export const NavBar = () => {
   return (
