@@ -24,7 +24,7 @@ export const ResponsiveSlider = ({ items }: SliderProps) => {
 
     return (
         <Carousel
-            className="pt-3 w-full flex md:flex-row flex-col"
+            className="pt-3 w-full flex lg:flex-row flex-col lg:px-12 xl:px-0"
             opts={{
                 loop: true,
                 dragFree: true,
@@ -32,12 +32,13 @@ export const ResponsiveSlider = ({ items }: SliderProps) => {
             }}
             setApi={setApi}
         >
-            <CarouselContent className="flex -ml-1">
+            <CarouselContent className="flex -ml-4">
                 {
                     items.map(item => (
                         <CarouselItem
                             key={item.image.src}
-                            className="basis-[80px] md:basis-[100px] pl-1"
+                            // className="basis-[80px] lg:basis-[100px] pl-1"
+                            className="max-w-[80px] lg:max-w-[100px] p-0 mx-2"
                         // style={{ flex: `0 0 ${100 / 17}%` }}
 
                         >
@@ -55,16 +56,14 @@ export const ResponsiveSlider = ({ items }: SliderProps) => {
             {
                 <>
                     <CarouselPrevious
-                        className="ease-in duration-200 transition-all bg-mainColor hover:bg-mainColor border-transparent z-50"
-                        position="-3rem"
+                        className="ease-in duration-200 hidden lg:flex left-0 xl:-left-12 transition-all bg-mainColor hover:bg-mainColor border-transparent z-50 box-content p-1"
                         disabled={false}
                     onClick={() => handlePrevious()}
                     >
                         <ChevronLeftIcon color="white" className="h-6 w-6" />
                     </CarouselPrevious>
                     <CarouselNext
-                        className="ease-in duration-200 transition-all bg-mainColor hover:bg-mainColor border-transparent z-50"
-                        position="-3rem"
+                        className="ease-in duration-200 hidden lg:flex right-0 xl:-right-12 transition-all bg-mainColor hover:bg-mainColor border-transparent z-50 box-content p-1"
                         disabled={false}
                     onClick={() => handleNext()}
                     >
@@ -74,7 +73,7 @@ export const ResponsiveSlider = ({ items }: SliderProps) => {
             }
 
             {
-                <div className="w-full h-6 mt-2 flex items-center justify-around px-10 md:hidden">
+                <div className="w-full h-6 mt-2 flex items-center justify-around px-10 lg:hidden">
                      {
                     ranges?.map((range, index) => (
                         <span

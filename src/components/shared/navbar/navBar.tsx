@@ -14,8 +14,8 @@ import { CustomToltip } from "@/components";
 export const NavBar = () => {
   return (
     <div className="w-full bg-white">
-      <div className="flex md:justify-between items-center px-4 py-1 gap-2">
-        <div className="md:flex-1">
+      <div className="flex md:justify-between items-center px-4 py-1">
+        <div className="xl:flex-1">
           <div className="lg:hidden">
             <IoMdMenu size={25} />
           </div>
@@ -36,8 +36,8 @@ export const NavBar = () => {
                   Productos
                 </Link>
               </li>
-              <li className="flex items-center">
-                <Link href={"/facturas"} className="font-bold bg-mainColor rounded-xl text-white px-3 py-0.5 text-sm">
+              <li className="flex items-center w-full">
+                <Link href={"/facturas"} className="font-bold bg-mainColor rounded-xl w-fit text-white px-3 py-0.5 text-sm">
                   Facturas electrónicas
                 </Link>
               </li>

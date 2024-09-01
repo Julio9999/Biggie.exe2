@@ -1,8 +1,5 @@
 'use client'
-import { IoCaretForward, IoCaretBack } from "react-icons/io5";
-import { Slide } from "./Slide"
 import { StaticImageData } from "next/image";
-import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Autoplay from "embla-carousel-autoplay"
 
 import {
@@ -15,7 +12,6 @@ import {
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons";
-import { SliderProps } from "@/interfaces";
 
 
 interface Props {
@@ -56,17 +52,19 @@ export const Slider = ({ srcs }: Props) => {
             {
                 <>
                     <CarouselPrevious
-                        position={cn(showButtons ? "1rem" : "-2rem")}
-                        className="ease-in duration-200 transition-all bg-gray-400   hover:bg-red-600 border-transparent"
+                        className={cn(`ease-in duration-200 -left-10 transition-all bg-gray-400 p-1 box-content   hover:bg-mainColor border-transparent`, {
+                            "left-4": showButtons
+                        })}
                     >
                         <ChevronLeftIcon color="white" className="h-6 w-6" />
                     </CarouselPrevious>
                     <CarouselNext
-                        position={cn(showButtons ? "1rem" : "-2rem")}
-                        className="ease-in duration-200 transition-all bg-gray-400 hover:bg-red-600 border-transparent"
+                        className={cn(`ease-in duration-200 -right-10 transition-all bg-gray-400 p-1 box-content hover:bg-mainColor border-transparent`, {
+                            "right-4": showButtons
+                        })}
                     >
                         <ChevronRightIcon color="white" className="h-6 w-6" />
-                    </CarouselNext>
+                    </CarouselNext> 
                 </>
             }
         </Carousel>

@@ -22,10 +22,10 @@ export const ProductCard = (
 
     return (
         <Card
-            className="h-[380px] gap-2 pt-5 shadow-md max-w-[288px] md:max-w-[280px] outline-none hover:outline-offset-0 hover:outline-mainColor hover:outline-1"
+            className="h-[380px] gap-2 pt-5 shadow-md max-w-[288px] md:max-w-[280px] outline-none hover:outline-offset-0 hover:outline-mainColor hover:outline-1 group"
         >
             <CardContent className="flex flex-col items-center relative">
-                <span className="absolute w-10 h-10 -top-4 right-2 hover:bg-mainColorTransparent p-2 hover:rounded-full">
+                <span className="absolute w-10 h-10 -top-4 cursor-pointer right-2 hover:bg-mainColorTransparent p-2 hover:rounded-full">
                     <CustomToltip text={"Agregar a favoritos"}>
                         <FaRegHeart
                             className="text-mainColor cursor-pointer"
@@ -33,7 +33,7 @@ export const ProductCard = (
                     </CustomToltip>
                 </span>
                 <div
-                    className={`h-[160px] mx-4 w-full hover:animate-scaleUpDown`}
+                    className={`h-[160px] mx-4 w-full group-hover:animate-scaleUpDown`}
                     style={{
                         backgroundImage: `url(${imgUrl.src})`,
                         backgroundSize: 'contain',

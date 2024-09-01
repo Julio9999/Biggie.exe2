@@ -1,3 +1,5 @@
+export { Footer } from './shared/footer/footer';
+
 export { ProductCard } from './shared/product-card/product-card';
 
 export  { ResponsiveSlider } from './shared/responsive-slider/responsive-slider';
