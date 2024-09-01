@@ -30,7 +30,7 @@ import varios from "@/assets/productos-varios.jpg";
 
 import { ResponsiveSlider, Slider } from '@/components';
 import { SliderItem } from "@/interfaces";
-import { RecomendedProducts } from "./ui/recomended-products";
+import { RecomendedProducts } from "./ui";
 
 export default function Home() {
 

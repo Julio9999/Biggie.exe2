@@ -1,23 +1,22 @@
 import { IoMdHeartEmpty } from "react-icons/io";
 import { IoBagHandleOutline, IoCartOutline } from "react-icons/io5"
 import { RiUserShared2Fill } from "react-icons/ri"
-import { IoMdMenu } from "react-icons/io";
 import { IoSearchSharp } from "react-icons/io5";
 import logo from "@/assets/logo-biggie.svg"
 
 
 import Link from "next/link"
-import { FloatingInput, FloatingLabel } from "../../ui/floating-label-input";
 import { CustomSearchInput } from "../../ui/custom-search-input";
 import { CustomToltip } from "@/components";
+import { MenuDrawer } from "@/app/ui";
 
 export const NavBar = () => {
   return (
     <div className="w-full bg-white">
-      <div className="flex md:justify-between items-center px-4 py-1">
-        <div className="xl:flex-1">
+      <div className="flex justify-between items-center gap-2 xl:gap-0 px-4 py-1">
+        <div className="lg:flex-1">
           <div className="lg:hidden">
-            <IoMdMenu size={25} />
+            <MenuDrawer />
           </div>
           <div className="hidden lg:block">
             <ul className='flex gap-3'>
