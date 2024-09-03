@@ -1,3 +1,7 @@
+export { CustomInput } from './shared/custom-input/custom-input';
+
+export { CustomSearchInput } from './shared/custom-search-input/custom-search-input';
+
 export { Footer } from './shared/footer/footer';
 
 export { ProductCard } from './shared/product-card/product-card';

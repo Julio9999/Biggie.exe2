@@ -1,6 +1,6 @@
 'use client'
 import { IoSearchSharp } from "react-icons/io5"
-import { FloatingInput, FloatingLabel } from "./floating-label-input"
+import { FloatingInput, FloatingLabel } from "../../ui/floating-label-input"
 import { useState } from "react";
 import clsx from "clsx";
 
