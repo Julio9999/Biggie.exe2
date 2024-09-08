@@ -66,9 +66,9 @@ export default function Home() {
 
   return (
     <main>
-      <Slider srcs={srcs} />
+      {/* <Slider srcs={srcs} /> */}
       <div className="px-4 pb-4">
-        <ResponsiveSlider items={secondarySrcs} />
+        {/* <ResponsiveSlider items={secondarySrcs} /> */}
         <RecomendedProducts />
       </div>
     </main>

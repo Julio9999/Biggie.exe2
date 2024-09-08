@@ -4,7 +4,7 @@ export { CustomSearchInput } from './shared/custom-search-input/custom-search-in
 
 export { Footer } from './shared/footer/footer';
 
-export { ProductCard } from './shared/product-card/product-card';
+export * from './shared/product-card/product-card';
 
 export  { ResponsiveSlider } from './shared/responsive-slider/responsive-slider';
 export  { useResponsiveSlider } from './shared/responsive-slider/use-responsive-slider';

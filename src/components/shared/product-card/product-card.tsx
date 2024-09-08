@@ -2,56 +2,100 @@ import { Card, CardContent } from "@/components/ui/card";
 import { StaticImageData } from "next/image";
 import { FaRegHeart } from "react-icons/fa";
 import { CustomToltip } from "../custom-toltip/custom-toltip";
+import { ReactNode } from "react";
 
 
-interface Props {
-    imgUrl: StaticImageData;
-    price: string;
+interface ProductChildrenProps {
+    className?: string;
+}
+
+interface ProductImageProps extends ProductChildrenProps {
+    productImage: StaticImageData;
+}
+
+interface ProductNameProps extends ProductChildrenProps {
     productName: string;
+}
+
+interface ProductCategoryProps extends ProductChildrenProps {
     productCategory: string;
 }
 
-export const ProductCard = (
-    {
-        imgUrl,
-        price,
-        productName,
-        productCategory
-    }
-        : Props) => {
+interface ProductPriceProps extends ProductChildrenProps {
+    price: string;
+}
 
+interface Props {
+    className?: string;
+    children?: ReactNode;
+}
+
+export const ProductCard = ({ className, children }: Props) => {
     return (
         <Card
-            className="h-[380px] gap-2 pt-5 shadow-md max-w-[288px] md:max-w-[280px] outline-none hover:outline-offset-0 hover:outline-mainColor hover:outline-1 group"
+            className={`h-[380px] gap-2 pt-5 shadow-md  max-w-[288px] md:max-w-[280px] outline-none hover:outline-offset-0 hover:outline-mainColor hover:outline-1 group relative ${className}`}
         >
-            <CardContent className="flex flex-col items-center relative">
-                <span className="absolute w-10 h-10 -top-4 cursor-pointer right-2 hover:bg-mainColorTransparent p-2 hover:rounded-full">
-                    <CustomToltip text={"Agregar a favoritos"}>
-                        <FaRegHeart
-                            className="text-mainColor cursor-pointer"
-                            size={25} />
-                    </CustomToltip>
-                </span>
-                <div
-                    className={`h-[160px] mx-4 w-full group-hover:animate-scaleUpDown`}
-                    style={{
-                        backgroundImage: `url(${imgUrl.src})`,
-                        backgroundSize: 'contain',
-                        backgroundRepeat: 'no-repeat',
-                        backgroundPosition: 'center',
-                    }}
-                >
-                </div>
-                <div className="flex flex-col px-4">
-                    <span className="font-medium text-xl">{price}</span>
-                    <span className="text-sm font-medium">{productName}</span>
-                    <span className="text-sm text-gray-500 font-normal">{productCategory}</span>
-                </div>
-                <button
-                    className="bg-mainColor tracking-widest rounded-3xl mt-3 text-white px-4 py-2 text-sm font-medium w-fit text-center">
-                    AGREGAR AL CARRITO
-                </button>
-            </CardContent>
+            <span className="absolute w-10 h-10 top-4 cursor-pointer right-2 hover:bg-mainColorTransparent p-2 hover:rounded-full">
+                <CustomToltip text={"Agregar a favoritos"}>
+                    <FaRegHeart
+                        className="text-mainColor cursor-pointer"
+                        size={25} />
+                </CustomToltip>
+            </span>
+            {children}
         </Card>
+    );
+};
+
+export const ProductImage = (({ productImage, className }: ProductImageProps) => {
+    return (
+        <div
+            className={`h-[160px] w-full group-hover:animate-scaleUpDown ${className}`}
+            style={{
+                backgroundImage: `url(${productImage.src})`,
+                backgroundSize: 'contain',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',
+            }}
+        >
+        </div>
+    );
+});
+
+export const ProductName = (({ productName, className }: ProductNameProps) => {
+    return (
+        <span className={`text-sm font-medium text-center ${className}`}>{productName}</span>
+    );
+})
+
+export const ProductCategory = (({ productCategory, className }: ProductCategoryProps) => {
+    return (
+        <span className={`text-sm text-grayText font-normal text-center ${className}`}>{productCategory}</span>
+    );
+})
+
+export const ProductPrice = (({ price, className }: ProductPriceProps) => {
+    return (
+        <span className={`font-medium text-xl ${className}`}>{price}</span>
+    );
+})
+
+export const ProductButton = ({ className }: ProductChildrenProps) => {
+
+    return (
+        <button
+            className={`
+            bg-mainColor tracking-widest rounded-3xl mt-3 text-white px-4 py-2 text-sm font-medium w-fit text-center
+            ${className}
+            `}>
+            AGREGAR AL CARRITO
+        </button>
     )
 }
+
+
+ProductCard.Price = ProductPrice;
+ProductCard.Name = ProductName;
+ProductCard.Image = ProductImage;
+ProductCard.Category = ProductCategory;
+ProductCard.Button = ProductButton;

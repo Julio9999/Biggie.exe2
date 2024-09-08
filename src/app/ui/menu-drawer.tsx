@@ -1,4 +1,4 @@
-import { Sheet, SheetContent,SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import clsx from "clsx"
 import { IoMdMenu } from "react-icons/io"
 import { MdHome } from "react-icons/md";
@@ -16,7 +16,9 @@ export const MenuDrawer = () => {
         <div className="grid grid-cols-2 gap-2 p-0">
             <Sheet>
                 <SheetTrigger asChild>
-                    <IoMdMenu size={25} cursor="pointer" />
+                    <span>
+                        <IoMdMenu size={25} cursor="pointer" />
+                    </span>
                 </SheetTrigger>
                 <SheetContent side={"left"} className="py-2 px-2 w-[260px]">
                     <SheetHeader className="mb-2.5">
@@ -90,7 +92,7 @@ export const MenuDrawer = () => {
                                 'hover:bg-gray-100': true
                             })}
                         >
-                            <MdOutlineNewspaper  className="text-mainColor" size={25} />
+                            <MdOutlineNewspaper className="text-mainColor" size={25} />
                             <span
                                 className={clsx(" text-base font-normal", {
                                     "text-mainColor": false
