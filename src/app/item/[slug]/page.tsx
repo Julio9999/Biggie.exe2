@@ -1,7 +1,6 @@
 import { ProductCard, ResponsiveSlider } from "@/components";
 import product from "@/assets/card-image.webp"
 import Link from "next/link";
-import { secondarySrcs } from "@/app/page";
 import { SuggestProduct, SuggestProductProps } from "./ui/suggest-product";
 
 

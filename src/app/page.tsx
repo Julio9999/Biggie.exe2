@@ -29,32 +29,9 @@ import varios from "@/assets/productos-varios.jpg";
 
 
 import { ResponsiveSlider, Slider } from '@/components';
-import { SliderItem } from "@/interfaces";
 import { RecomendedProducts } from "./ui";
 import { CarouselItem } from "./ui/carousel-item";
 
-export const secondarySrcs: SliderItem[] = [
-  { image: alimentos, description: 'Alimentos Especiales', id: 'Alimentos Especiales' },
-  { image: almacen, description: 'Almacén', id: 'Almacén' },
-  { image: asado, description: 'Asado', id: 'Asado'  },
-  { image: bebes, description: 'Bebes', id: 'Bebes' },
-  { image: bebidasAlcoholicas, description: 'Bebidas con Alcohol', id: 'Bebidas con Alcohol' },
-  { image: bebidasSinAlcohol, description: 'Bebidas sin Alcohol', id: 'Bebidas sin Alcohol' },
-  { image: carniceria, description: 'Carneceria', id: 'Carneceria' },
-  { image: golosinas, description: 'Chocolates y Golosinas', id:  'Chocolates y Golosinas'},
-  { image: congelados, description: 'Congelados', id: 'Congelados' },
-  { image: fiambreria, description: 'Fiambreria', id: 'Fiambreria' },
-  { image: frutas_y_verduras, description: 'Frutería y Verduleria', id: 'Frutería y Verduleria'  },
-  { image: heladeria, description: 'Heladeria y Confiteria', id:  'Heladeria y Confiteria' },
-  { image: higiene, description: 'Higiene Personal', id: 'Higiene Personal' },
-  { image: lacteos, description: 'Lácteos', id: 'Lácteos' },
-  { image: libreria, description: 'Libreria', id: 'Libreria' },
-  { image: limpieza, description: 'Limpieza', id:'Limpieza'  },
-  { image: mascotas, description: 'Mascotas', id: 'Mascotas' },
-  { image: panaderia, description: 'Panaderia', id: 'Panaderia' },
-  { image: snacks, description: 'Snacks', id: 'Snacks' },
-  { image: varios, description: 'Varios', id: 'Varios' }
-]
 
 export default function Home() {
 
@@ -65,6 +42,28 @@ export default function Home() {
     chocolate,
   ]
 
+  const secondarySrcs: any[] = [
+    { image: alimentos, description: 'Alimentos Especiales', id: 'Alimentos Especiales' },
+    { image: almacen, description: 'Almacén', id: 'Almacén' },
+    { image: asado, description: 'Asado', id: 'Asado'  },
+    { image: bebes, description: 'Bebes', id: 'Bebes' },
+    { image: bebidasAlcoholicas, description: 'Bebidas con Alcohol', id: 'Bebidas con Alcohol' },
+    { image: bebidasSinAlcohol, description: 'Bebidas sin Alcohol', id: 'Bebidas sin Alcohol' },
+    { image: carniceria, description: 'Carneceria', id: 'Carneceria' },
+    { image: golosinas, description: 'Chocolates y Golosinas', id:  'Chocolates y Golosinas'},
+    { image: congelados, description: 'Congelados', id: 'Congelados' },
+    { image: fiambreria, description: 'Fiambreria', id: 'Fiambreria' },
+    { image: frutas_y_verduras, description: 'Frutería y Verduleria', id: 'Frutería y Verduleria'  },
+    { image: heladeria, description: 'Heladeria y Confiteria', id:  'Heladeria y Confiteria' },
+    { image: higiene, description: 'Higiene Personal', id: 'Higiene Personal' },
+    { image: lacteos, description: 'Lácteos', id: 'Lácteos' },
+    { image: libreria, description: 'Libreria', id: 'Libreria' },
+    { image: limpieza, description: 'Limpieza', id:'Limpieza'  },
+    { image: mascotas, description: 'Mascotas', id: 'Mascotas' },
+    { image: panaderia, description: 'Panaderia', id: 'Panaderia' },
+    { image: snacks, description: 'Snacks', id: 'Snacks' },
+    { image: varios, description: 'Varios', id: 'Varios' }
+  ]
   
 
   return (

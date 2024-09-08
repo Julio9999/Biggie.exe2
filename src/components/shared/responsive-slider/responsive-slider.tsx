@@ -5,10 +5,6 @@ import clsx from "clsx";
 import { useResponsiveSlider } from "./use-responsive-slider";
 import React, { ReactElement } from "react";
 
-export interface SliderItem {
-    item: React.ReactNode;
-    id: string;
-}
 
 export interface SliderProps {
     items: any[];
