@@ -1,14 +1,25 @@
 "use client"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
-import { SliderProps } from "@/interfaces"
 import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons"
 import clsx from "clsx";
 import { useResponsiveSlider } from "./use-responsive-slider";
+import React, { ReactElement } from "react";
+
+export interface SliderItem {
+    item: React.ReactNode;
+    id: string;
+}
+
+export interface SliderProps {
+    items: any[];
+    sliderItemComponent: ReactElement;
+    carrouselItemsClassName?: string;
+}
 
 
 
 
-export const ResponsiveSlider = ({ items }: SliderProps) => {
+export const ResponsiveSlider = ({ items, carrouselItemsClassName, sliderItemComponent }: SliderProps) => {
 
     const {
         setApi,
@@ -19,8 +30,8 @@ export const ResponsiveSlider = ({ items }: SliderProps) => {
         api,
         setSlidesInView
     } = useResponsiveSlider()
-    
-    
+
+
 
     return (
         <Carousel
@@ -34,21 +45,15 @@ export const ResponsiveSlider = ({ items }: SliderProps) => {
         >
             <CarouselContent className="flex -ml-4">
                 {
-                    items.map(item => (
+                    items.map(sliderITem => (
                         <CarouselItem
-                            key={item.image.src}
-                            // className="basis-[80px] lg:basis-[100px] pl-1"
-                            className="max-w-[80px] lg:max-w-[100px] p-0 mx-2"
-                        // style={{ flex: `0 0 ${100 / 17}%` }}
+                            key={sliderITem.id}
+                            className={`${carrouselItemsClassName}`}
 
                         >
-                            <picture className="w-full flex flex-col gap-2" >
-                                <img src={item.image.src} alt="img"
-                                    className="w-full h-full rounded-lg"
-                                // className="rounded-lg min-w-[100px] max-w-[100px]" 
-                                />
-                                <span className="text-xs text-center font-bold">{item.description}</span>
-                            </picture>
+                            {React.cloneElement(sliderItemComponent, {
+                                ...sliderITem
+                            })} 
                         </CarouselItem>
                     ))
                 }
@@ -58,14 +63,14 @@ export const ResponsiveSlider = ({ items }: SliderProps) => {
                     <CarouselPrevious
                         className="ease-in duration-200 hidden lg:flex left-0 xl:-left-12 transition-all bg-mainColor hover:bg-mainColor border-transparent z-50 box-content p-1"
                         disabled={false}
-                    onClick={() => handlePrevious()}
+                        onClick={() => handlePrevious()}
                     >
                         <ChevronLeftIcon color="white" className="h-6 w-6" />
                     </CarouselPrevious>
                     <CarouselNext
                         className="ease-in duration-200 hidden lg:flex right-0 xl:-right-12 transition-all bg-mainColor hover:bg-mainColor border-transparent z-50 box-content p-1"
                         disabled={false}
-                    onClick={() => handleNext()}
+                        onClick={() => handleNext()}
                     >
                         <ChevronRightIcon color="white" className="h-6 w-6" />
                     </CarouselNext>
@@ -74,18 +79,18 @@ export const ResponsiveSlider = ({ items }: SliderProps) => {
 
             {
                 <div className="w-full h-6 mt-2 flex items-center justify-around px-10 lg:hidden">
-                     {
-                    ranges?.map((range, index) => (
-                        <span
-                            key={index}
-                            className={clsx(`
+                    {
+                        ranges?.map((range, index) => (
+                            <span
+                                key={index}
+                                className={clsx(`
                             w-[5px] h-[5px] rounded-full bg-gray-300`, {
-                                'bg-gray-950': current >= range.start && current <= range.end
-                            })}
-                            onClick={() => api?.scrollTo(range.start - 1)}
-                        ></span>
-                    ))
-                }
+                                    'bg-gray-950': current >= range.start && current <= range.end
+                                })}
+                                onClick={() => api?.scrollTo(range.start - 1)}
+                            ></span>
+                        ))
+                    }
                 </div>
             }
         </Carousel>

@@ -34,7 +34,9 @@
 
     --main-red: 353, 95%, 40%;
 
-    --text-gray: 0, 0%, 66%
+    --text-gray: 0, 0%, 66%;
+
+    --light-dark: 0, 0%, 33%;
   }
 
   .dark {

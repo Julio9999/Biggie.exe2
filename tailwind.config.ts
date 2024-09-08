@@ -54,7 +54,8 @@ const config = {
         },
         mainColor: "hsl(var(--main-red))",
         mainColorTransparent: "hsla(var(--main-red), 0.2)",
-        grayText: "hsl(var(--text-gray))"
+        grayText: "hsl(var(--text-gray))",
+        lightDark: "hsl(var(--light-dark))"
       },
       borderRadius: {
         lg: "var(--radius)",

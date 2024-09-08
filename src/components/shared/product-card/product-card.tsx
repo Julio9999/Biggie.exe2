@@ -52,7 +52,7 @@ export const ProductImage = (({ productImage, className }: ProductImageProps) =>
         <div
             className={`h-[160px] w-full group-hover:animate-scaleUpDown ${className}`}
             style={{
-                backgroundImage: `url(${productImage.src})`,
+                backgroundImage: `url(${productImage?.src})`,
                 backgroundSize: 'contain',
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center',
