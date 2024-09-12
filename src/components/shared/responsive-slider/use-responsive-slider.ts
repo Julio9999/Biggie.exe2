@@ -78,7 +78,7 @@ export const useResponsiveSlider = () => {
             }, 0);
         };
         updateSlidesInView();
-    }, [api, slidesInView]);
+    }, [api]);
 
     const calculateRangeForDots = (totalSlides: number, slidesInView: number) => {
         const points = Math.ceil(totalSlides / slidesInView);

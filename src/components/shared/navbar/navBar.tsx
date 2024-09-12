@@ -7,11 +7,10 @@ import logo from "@/assets/logo-biggie.svg"
 
 
 import Link from "next/link"
-import { CustomInput, CustomSearchInput, CustomToltip } from "@/components";
-import { MenuDrawer } from "@/app/ui";
+import { CustomInput, CustomSearchInput, CustomToltip, MenuDrawer } from "@/components";
+
 import { useState } from "react";
 import clsx from "clsx";
-import { Input } from "@/components/ui/input";
 
 export const NavBar = () => {
 

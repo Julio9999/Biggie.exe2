@@ -35,7 +35,7 @@ export const ResponsiveSlider = ({ items, carrouselItemsClassName, sliderItemCom
             opts={{
                 loop: true,
                 dragFree: true,
-                watchResize: () => setSlidesInView(() => api?.slidesInView().length!)
+                // watchResize: () => setSlidesInView(() => api?.slidesInView().length!)
             }}
             setApi={setApi}
         >
