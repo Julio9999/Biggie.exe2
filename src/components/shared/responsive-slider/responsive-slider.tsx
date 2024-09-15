@@ -31,7 +31,7 @@ export const ResponsiveSlider = ({ items, carrouselItemsClassName, sliderItemCom
 
     return (
         <Carousel
-            className="pt-3 w-full flex lg:flex-row flex-col lg:px-12 xl:px-0"
+            className="pt-3 w-full flex lg:flex-row flex-col lg:px-12 "
             opts={{
                 loop: true,
                 dragFree: true,
@@ -57,14 +57,14 @@ export const ResponsiveSlider = ({ items, carrouselItemsClassName, sliderItemCom
             {
                 <>
                     <CarouselPrevious
-                        className="ease-in duration-200 hidden lg:flex left-0 xl:-left-12 transition-all bg-mainColor hover:bg-mainColor border-transparent z-50 box-content p-1"
+                        className="ease-in duration-200 hidden lg:flex left-0  transition-all bg-mainColor hover:bg-mainColor border-transparent z-50 box-content p-1"
                         disabled={false}
                         onClick={() => handlePrevious()}
                     >
                         <ChevronLeftIcon color="white" className="h-6 w-6" />
                     </CarouselPrevious>
                     <CarouselNext
-                        className="ease-in duration-200 hidden lg:flex right-0 xl:-right-12 transition-all bg-mainColor hover:bg-mainColor border-transparent z-50 box-content p-1"
+                        className="ease-in duration-200 hidden lg:flex right-0  transition-all bg-mainColor hover:bg-mainColor border-transparent z-50 box-content p-1"
                         disabled={false}
                         onClick={() => handleNext()}
                     >

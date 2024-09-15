@@ -70,11 +70,11 @@ export default function Home() {
     <main>
       <Slider srcs={srcs} />
       <div className="px-4 pb-4">
-        {/* <ResponsiveSlider
+        <ResponsiveSlider
           items={secondarySrcs}
           sliderItemComponent={<CarouselItem />}
           carrouselItemsClassName="max-w-[80px] lg:max-w-[100px] p-0 mx-2 "
-        /> */}
+        />
         <RecomendedProducts />
       </div>
     </main>

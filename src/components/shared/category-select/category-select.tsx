@@ -44,7 +44,7 @@ export const CategorySelect = () => {
     return (
         <Select onValueChange={(value) =>  setValue(() => value) }>
             <SelectTrigger
-                className={cn("h-full border-none outline text-base p-0 text-grayText outline-none focus:ring-0 truncate w-36", {
+                className={cn("h-full border-none outline text-base p-0 text-grayText outline-none focus:ring-0 truncate w-full", {
                     'text-black': value
                 })}
                 icon={<IoMdArrowDropdown size={25}
