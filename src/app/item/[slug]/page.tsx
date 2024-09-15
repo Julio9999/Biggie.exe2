@@ -132,15 +132,15 @@ const Page = ({ params }: Params) => {
 
             <section className="mt-12">
                 <h2 className="text-2xl font-bold text-lightDark mb-6">También le podria interesar</h2>
-                <article className="flex gap-6  py-2">
+                <article className="flex gap-6  py-2 z-50">
 
-                    {/* <ResponsiveSlider
+                    <ResponsiveSlider
                         items={items}
                         sliderItemComponent={
                             <SuggestProduct />
                         }
                         carrouselItemsClassName="max-w-[270px] p-0 mx-2 py-1"
-                    /> */}
+                    />
                 </article>
             </section>
 

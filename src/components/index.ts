@@ -1,3 +1,7 @@
+export { FavoriteDialog } from './shared/favorite-dialog/favorite-dialog';
+
+export { FavoriteToltip } from './shared/favorite-toltip/favorite-toltip';
+
 export { ProductList } from './shared/product-list/product-list';
 
 export { CategorySelect } from './shared/category-select/category-select';
@@ -22,5 +26,3 @@ export { NavBar } from './shared/navbar/navBar';
 export { LogoBiggie } from './icons/logoBiggie';
 
 export { Slider } from './slider/Slider';
-
-

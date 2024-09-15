@@ -70,8 +70,8 @@ export const useResponsiveSlider = () => {
                 setCount(api.scrollSnapList().length);
                 const count = api.scrollSnapList().length;
 
-                const ranges = calculateRangeForDots(count, visibleSlides);
-                setRanges(() => ranges)
+                // const ranges = calculateRangeForDots(count, visibleSlides);
+                // setRanges(() => ranges)
 
                 api.on("select", () => {
                     setCurrent(api.selectedScrollSnap() + 1)

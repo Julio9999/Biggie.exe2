@@ -1,8 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { StaticImageData } from "next/image";
-import { FaRegHeart } from "react-icons/fa";
-import { CustomToltip } from "../custom-toltip/custom-toltip";
 import { ReactNode } from "react";
+import { FavoriteDialog } from "@/components";
 
 
 interface ProductChildrenProps {
@@ -35,12 +34,8 @@ export const ProductCard = ({ className, children }: Props) => {
         <Card
             className={`h-[380px] gap-2 pt-5 shadow-md  max-w-[288px] md:max-w-[280px] outline-none hover:outline-offset-0 hover:outline-mainColor hover:outline-1 group relative ${className}`}
         >
-            <span className="absolute w-10 h-10 top-4  right-2 z-50">
-                <CustomToltip text={"Agregar a favoritos"}>
-                    <FaRegHeart
-                        className="text-mainColor w-full px-1 py-2  cursor-pointer hover:bg-mainColorTransparent hover:rounded-3xl box-content"
-                        size={25} />
-                </CustomToltip>
+            <span className="absolute w-10 h-10 top-1 right-2 z-50" >
+                <FavoriteDialog />
             </span>
             {children}
         </Card>
