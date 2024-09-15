@@ -60,6 +60,7 @@ export const useResponsiveSlider = () => {
     useEffect(() => {
         if (!api) return;
 
+
         const updateSlidesInView = () => {
 
             setTimeout(() => {
@@ -81,14 +82,14 @@ export const useResponsiveSlider = () => {
     }, [api]);
 
     const calculateRangeForDots = (totalSlides: number, slidesInView: number) => {
-        const points = Math.ceil(totalSlides / slidesInView);
-        let ranges = [];
-        for (let i = 0; i < points; i++) {
-            const start = i * slidesInView + 1;
-            const end = (i + 1) * slidesInView;
-            ranges.push({ start, end });
-        }
-        return ranges;
+         const points = Math.ceil(totalSlides / slidesInView);
+         let ranges = [];
+         for (let i = 0; i < points; i++) {
+             const start = i * slidesInView + 1;
+             const end = (i + 1) * slidesInView;
+             ranges.push({ start, end });
+         }
+         return ranges;
     };
 
     return {

@@ -2,13 +2,17 @@ import { ProductCard } from "@/components"
 import product from "@/assets/card-image.webp"
 import Link from "next/link"
 
-export const RecomendedProducts = () => {
+interface Props {
+    title: string;
+}
+
+export const ProductList = ({title}: Props) => {
 
     const slug = 'costilla-de-primera-biggie-envasado-al-vacio-x-kg-60168';
 
     return (
         <section className="text-center mt-10 w-full">
-            <h1 className="text-xl md:text-4xl md:text-start font-bold mb-6">Productos Recomendados</h1>
+            <h1 className="text-xl md:text-4xl md:text-start font-bold mb-6">{title}</h1>
             <article className="flex gap-6 md:gap-3 w-full justify-center  items-center flex-wrap">
                 {
                     Array.from({ length: 12 }).map((_, index) => (

@@ -11,10 +11,14 @@ import { CustomInput, CustomSearchInput, CustomToltip, MenuDrawer } from "@/comp
 
 import { useState } from "react";
 import clsx from "clsx";
+import { usePathname } from "next/navigation";
 
 export const NavBar = () => {
 
   const [expanded, setIsExpanded] = useState(false);
+
+  const pathName = usePathname();
+
 
   return (
     <div className="w-full bg-white">
@@ -28,17 +32,25 @@ export const NavBar = () => {
           <div className="hidden lg:block">
             <ul className='flex gap-3'>
               <li className="flex items-center">
-                <Link href={'/'} className="font-bold text-mainColor text-sm">
+                <Link href={'/'} 
+                className={clsx("font-bold text-gray-600  text-sm", {
+                  'text-mainColor': pathName == '/',
+                })}
+                >
                   Inicio
                 </Link>
               </li>
               <li className="flex items-center">
-                <Link href={'/search'} className="font-bold text-gray-600 text-sm">
+                <Link href={'/search'} className={clsx("font-bold text-gray-600  text-sm", {
+                  'text-mainColor': pathName == '/search',
+                })}>
                   Buscar
                 </Link>
               </li>
               <li className="flex items-center">
-                <Link href={'/products'} className="font-bold text-gray-600 text-sm">
+                <Link href={'/products'} className={clsx("font-bold text-gray-600 text-sm", {
+                  'text-mainColor': pathName == '/products',
+                })}>
                   Productos
                 </Link>
               </li>

@@ -18,7 +18,7 @@ export const MenuDrawer = () => {
     const menuItems: MenuDrawerItemProps[] = [
         {title: "Inicio", path:'/' ,icon: <MdHome className="text-mainColor" size={25} />},
         {title: "Buscar", path:'/search', icon: <IoSearchOutline className="text-mainColor" size={25} />},
-        {title: "Productos", icon: <TbShoppingBagSearch className="text-mainColor" size={25} />},
+        {title: "Productos", path: '/products' ,icon: <TbShoppingBagSearch className="text-mainColor" size={25} />},
         {title: "Mis datos", icon: <IoMdPerson className="text-mainColor" size={25} />},
         {title: "Facturas eléctronicas", icon: <MdOutlineNewspaper className="text-mainColor" size={25} />},
         {title: "Acerca de nosotros", icon:<PiQuotesFill className="text-mainColor" size={25} />},

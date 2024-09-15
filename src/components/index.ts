@@ -1,3 +1,5 @@
+export { ProductList } from './shared/product-list/product-list';
+
 export { CategorySelect } from './shared/category-select/category-select';
 
 export { MenuDrawer } from './shared/drawer/menu-drawer';
@@ -20,4 +22,5 @@ export { NavBar } from './shared/navbar/navBar';
 export { LogoBiggie } from './icons/logoBiggie';
 
 export { Slider } from './slider/Slider';
+
 
